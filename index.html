@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glasgow Cuisine</title>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body ng-app="restaurant" ng-strict-di>
+
+<!-- Fixed position loading indicator -->
+<loading class="loading-indicator"></loading>
+
+<header>
+    <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="pull-left visible-md visible-lg"></a>
+                <div class="navbar-brand">
+                    <a href="index.html"><h1>Glasgow Cuisine</h1></a>
+                </div>
+
+                <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#collapsable-nav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div id="collapsable-nav" class="collapse navbar-collapse">
+                <ul id="nav-list" class="nav navbar-nav navbar-right">
+                    <li id="navHomeButton" ui-sref-active="active">
+                        <a ui-sref="public.home">Home</a>
+                    </li>
+                    <li id="navMenuButton" ui-sref-active="active">
+                        <a ui-sref="public.menu">Menu</a></li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="public.about">About</a>
+                    </li>
+
+                </ul><!-- #nav-list -->
+            </div><!-- .collapse .navbar-collapse -->
+        </div><!-- .container -->
+    </nav><!-- #header-nav -->
+</header>
+
+
+
+
+<ui-view>
+    <div class="text-center initial-loading">
+        <h2>Loading Site...</h2>
+    </div>
+</ui-view>
+
+<footer class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <section id="hours" class="col-sm-4">
+                <span>Hours:</span><br>
+                Mon-Thurs: 11:15am - 10:00pm<br>
+                Fri-Sat: 11:15am - 2:30am<br>
+                Sunday: 11:15am - 7:00pm
+                <hr class="visible-xs">
+            </section>
+            <section id="address" class="col-sm-4">
+                <span>Address:</span><br>
+                121 Sauchiehall Street<br>
+                Glasgow, G27 4AF
+                <hr class="visible-xs">
+            </section>
+            <section id="testimonials" class="col-sm-4">
+                <p>"The best restaurant in Glasgow I've been to! And that's saying a lot, since I've been to so
+                    many!"</p>
+                <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+            </section>
+        </div>
+        <div class="text-center">
+            Copyright &copy; 2020. Glasgow Cuisine. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Libs -->
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+
+<!-- Main Restaurant Module -->
+<script src="src/restaurant.module.js"></script>
+
+<!-- Common Module -->
+<script src="src/common/common.module.js"></script>
+<script src="src/common/loading/loading.component.js"></script>
+<script src="src/common/loading/loading.interceptor.js"></script>
+<script src="src/common/menu.service.js"></script>
+
+<!-- Public Module -->
+<script src="src/public/public.module.js"></script>
+<script src="src/public/public.routes.js"></script>
+<script src="src/public/menu/menu.controller.js"></script>
+<script src="src/public/menu-category/menu-category.component.js"></script>
+<script src="src/public/menu-items/menu-items.controller.js"></script>
+<script src="src/public/menu-item/menu-item.component.js"></script>
+
+</body>
+</html>
