@@ -36,8 +36,4 @@ We use SemVer for versioning. For the versions available.
 
 This project is licensed under the MIT License.
 
-## Acknowledgments
 
-* Supervisor
-* Mum
-* Dad
